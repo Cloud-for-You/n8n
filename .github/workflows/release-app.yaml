@@ -74,6 +74,7 @@ jobs:
             quay.io/${{ env.organization }}/${{ env.project }}
           tags: |
             type=raw,value=latest
+            type=sha,prefix=sha-
       - name: Log in to Red Hat Registry
         uses: docker/login-action@v2
         with:
