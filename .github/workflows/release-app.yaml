@@ -99,5 +99,5 @@ jobs:
           cache-to: type=gha,mode=max
           build-args: |
             N8N_VERSION=${{ env.N8N_VERSION }}
-            TARGETPLATFORM=${{ matrix.platform }}
+            TARGETPLATFORM=linux/amd64
 
