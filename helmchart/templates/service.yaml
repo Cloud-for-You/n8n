@@ -13,3 +13,4 @@ spec:
       name: http
   selector:
     {{- include "n8n.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/type: master

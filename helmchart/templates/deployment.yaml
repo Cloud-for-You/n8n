@@ -8,9 +8,15 @@ spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: "25%"
+      maxUnavailable: "25%" 
   selector:
     matchLabels:
       {{- include "n8n.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/type: master
   template:
     metadata:
       {{- with .Values.podAnnotations }}
