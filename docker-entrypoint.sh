@@ -1,4 +1,5 @@
 #!/bin/sh
+umask 0022
 cp /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem /opt/app-root/src/ca-trust/
 if [ -d /opt/custom-certificates ]; then
   echo "Trusting custom certificates from /opt/custom-certificates."
