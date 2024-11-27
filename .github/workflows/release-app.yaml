@@ -97,4 +97,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=gha,mode=max
+          build-args: |
+            N8N_VERSION=${{ env.N8N_VERSION }}
+            TARGETPLATFORM=${{ matrix.platform }}
 
