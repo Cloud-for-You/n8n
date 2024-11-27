@@ -1,0 +1,22 @@
+name: Build application
+on: workflow_dispatch
+
+env:
+  N8N_VERSION: 1.69.2
+  organization: cloud-for-you
+  project: n8n
+
+jobs:
+  helm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Set Chart.yaml
+        run: |
+          sed -i "s/__APP_VERSION__/${{ env.N8N_VERSION }}/" helmchart/Chart.yaml
+      - name: Package helmchart
+        run: |
+          helm package helmchart
