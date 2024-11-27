@@ -52,6 +52,9 @@ COPY --from=builder /opt/app-root/src/launcher-temp/bin/task-runner-launcher /us
 USER 1001
 
 EXPOSE 5678
+VOLUME /opt/app-root/src/ca-trust
+VOLUME /opt/app-root/src/.n8n
+VOLUME /opt/app-root/src/.cache
 
 ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
 
