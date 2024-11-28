@@ -1,6 +1,4 @@
 #!/bin/sh
-touch /opt/app-root/src/.n8n/.gitconfig
-export GIT_CONFIG=/opt/app-root/src/.n8n/.gitconfig
 cp /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem /opt/app-root/src/ca-trust/
 chmod 0664 /opt/app-root/src/ca-trust/tls-ca-bundle.pem
 if [ -d /opt/custom-certificates ]; then
