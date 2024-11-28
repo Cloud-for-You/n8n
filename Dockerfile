@@ -45,7 +45,7 @@ COPY --from=builder /opt/app-root/src/node_modules /opt/app-root/src/node_module
 COPY --from=builder /opt/app-root/src/package.json /opt/app-root/src/package.json
 
 USER root
-RUN microdnf install git
+RUN microdnf install -y git
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 COPY n8n-task-runners.json /etc/n8n-task-runners.json
 COPY --from=builder /opt/app-root/src/launcher-temp/bin/task-runner-launcher /usr/local/bin/task-runner-launcher
