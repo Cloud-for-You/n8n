@@ -15,7 +15,6 @@ export NODE_EXTRA_CA_CERTS=/opt/app-root/src/ca-trust/tls-ca-bundle.pem
 
 # Configure .gitconfig
 
-
 if [ "$#" -gt 0 ]; then
   # Got started with arguments
   exec n8n "$@"

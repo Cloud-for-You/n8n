@@ -51,8 +51,6 @@ COPY n8n-task-runners.json /etc/n8n-task-runners.json
 COPY --from=builder /opt/app-root/src/launcher-temp/bin/task-runner-launcher /usr/local/bin/task-runner-launcher
 
 USER 1001
-RUN touch /opt/app-root/src/.gitconfig && \
-  chmod 0666 /opt/app-root/src/.gitconfig
 
 EXPOSE 5678
 VOLUME /opt/app-root/src/ca-trust
