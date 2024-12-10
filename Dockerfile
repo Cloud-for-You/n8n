@@ -57,6 +57,8 @@ VOLUME /opt/app-root/src/ca-trust
 VOLUME /opt/app-root/src/.n8n
 VOLUME /opt/app-root/src/.cache
 
+ENV GIT_CONFIG_GLOBAL=/opt/app-root/src/.n8n/.gitconfig
 ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
